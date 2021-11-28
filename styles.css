@@ -1,0 +1,132 @@
+@font-face {
+  font-family: AlexeyOmFont;
+  src: url(assets/fonts/Alexeyomfont-Regular.ttf);
+}
+
+:root {
+  color-scheme: light dark; /* both supported */
+}
+
+* {
+  font-family: AlexeyOmFont, Tahoma, Verdana, Arial, sans-serif;
+}
+
+/* THEME RELATED SETUP */
+body {
+  --text-color: #222;
+  --background-color: #fff;
+}
+
+body.dark-theme {
+  --text-color: #eee;
+  --background-color: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --text-color: #eee;
+    --background-color: #121212;
+  }
+  body.light-theme {
+    --text-color: #222;
+    --background-color: #fff;
+  }
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+/* THEME RELATED SETUP END */
+
+body {
+  width: 35em;
+  margin: 0 auto;
+  max-width: calc(100% - 20px);
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+
+  /* background pattern */
+  /* credits to https://codepen.io/ThePixelPixie/pen/dXwEqp */
+  /* background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(#fff, #eee); */
+  /* background-color: mediumspringgreen; */
+  /* background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%; */
+  /* background-repeat: repeat; */
+}
+
+.sidebar {
+  margin: auto;
+  float: right;
+
+}
+.welcome-picture {
+  width: 200px;
+}
+
+header {
+  flex: 0 0 100%;
+  background-color: var(--background-color);
+  text-align: right;
+}
+footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  background: var(--background-color);
+}
+
+.btn {
+  position:relative;
+  background-color: var(--background-color);
+  border: none;
+  color: var(--text-color);
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+/* THEME STYLES */
+/* TODO: needs refactoring */
+.fa-sun-o {
+  display: inline !important;
+}
+
+.fa-moon-o {
+  display: none !important;
+}
+
+.dark-theme .fa-sun-o {
+  display: none !important;
+}
+
+.dark-theme .fa-moon-o {
+  display: inline !important;
+}
+
+.light-theme .fa-sun-o {
+  display: inline !important;
+}
+.light-theme .fa-moon-o {
+  display: none !important;
+}
+
+.light-theme.dark-theme .fa-sun-o {
+  display: none !important;
+}
+.light-theme.dark-theme .fa-moon-o {
+  display: inline !important;
+}
+.light-theme .fa-sun-o {
+  display: inline !important;
+}
+.btn .fa {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}

@@ -2,48 +2,18 @@
 <html lang="en">
   <head>
     <title>Alexey Om</title>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Alexey Om">
     <meta name="description" content="personal website">
+    <meta name="color-scheme" content="dark light">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
     <link rel="manifest" href="/assets/icons/site.webmanifest">
-    <style>
-    @font-face {
-      font-family: AlexeyOmFont;
-      src: url(assets/fonts/Alexeyomfont-Regular.ttf);
-    }
-
-    body {
-      font-family: AlexeyOmFont, Tahoma, Verdana, Arial, sans-serif;
-      width: 35em;
-      margin: 0 auto;
-      max-width: calc(100% - 20px);
-      padding: 10px;
-      display: flex;
-    }
-
-    .sidebar {
-      margin: auto;
-      float: right;
-
-    }
-    .my-pic {
-      width: 200px;
-    }
-
-    footer {
-      position: fixed;
-      width: 100%;
-      left: 0;
-      bottom: 0;
-      text-align: center;
-      color: #333;
-    }
-
-    </style>
+    <link rel="preload" href="/styles.css" as="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <!---
@@ -51,11 +21,15 @@
 
       Let me know if you spot something unusual!
     --->
+    <header>
+      <button class="btn" onclick="toggleTheme()"><i class="fa fa-moon-o"></i><i class="fa fa-sun-o"></i></button>
+      <hr />
+    </header>
     <main>
     <h1>Welcome!</h1>
 
     <section class="sidebar">
-      <img alt="my picture" src="assets/alexey.png" class="my-pic">
+      <img alt="my picture" src="assets/images/alexey.png" class="welcome-picture"> 
     </section>
 
     <p>My name is Alexey and I am a web developer.</p>
@@ -76,6 +50,8 @@
       <hr />
       &copy; Alexey Om
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
 
