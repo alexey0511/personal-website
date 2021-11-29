@@ -11,6 +11,8 @@
   font-family: AlexeyOmFont, Tahoma, Verdana, Arial, sans-serif;
 }
 
+
+
 /* THEME RELATED SETUP */
 body {
   --text-color: #222;
@@ -37,6 +39,7 @@ body.dark-theme {
 body {
   background: var(--background-color);
   color: var(--text-color);
+  transition: all 0.5s ease;
 }
 
 /* THEME RELATED SETUP END */
@@ -49,12 +52,31 @@ body {
   display: flex;
   flex-wrap: wrap;
 
-  /* background pattern */
+  /* background pattern that I'm leaving for later */
   /* credits to https://codepen.io/ThePixelPixie/pen/dXwEqp */
-  /* background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(#fff, #eee); */
-  /* background-color: mediumspringgreen; */
-  /* background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%; */
-  /* background-repeat: repeat; */
+  /* background: 
+  radial-gradient(1.5em 6.28571em at 1.95em, 
+    rgba(0,0,0, 0) 50%, rgba(0,0,0, 0.25) 50%, 
+    rgba(0,0,0, 0.25) 55%, rgba(0,0,0, 0) 55%) 0 0, 
+  radial-gradient(1.5em 6.28571em at -0.45em, 
+    rgba(0,0,0, 0) 50%, rgba(0,0,0, 0.25) 50%, 
+    rgba(0,0,0, 0.25) 55%, rgba(0,0,0, 0) 55%) 1.5em 5.5em, 
+  radial-gradient(2.3em 4.57143em at 2.99em, 
+    rgba(0,0,0, 0) 50%, rgba(0,0,0, 0.3) 50%, 
+    rgba(0,0,0, 0.3) 55%, rgba(0,0,0, 0) 55%) 0 0, 
+  radial-gradient(2.3em 4.57143em at -0.69em, 
+    rgba(0,0,0, 0) 50%, rgba(0,0,0, 0.3) 50%, 
+    rgba(0,0,0, 0.3) 55%, rgba(0,0,0, 0) 55%) 2.3em 4em, 
+  radial-gradient(3.5em 6.28571em at 4.55em, 
+    rgba(0,0,0, 0) 50%, rgba(0,0,0, 0.25) 50%, 
+    rgba(0,0,0, 0.25) 55%, rgba(0,0,0, 0) 55%) 0 0, 
+  radial-gradient(3.5em 6.28571em at -1.05em, 
+    rgba(0,0,0, 0) 50%, rgba(0,0,0, 0.25) 50%, 
+    rgba(0,0,0, 0.25) 55%, rgba(0,0,0, 0) 55%) 3.5em 5.5em, 
+    radial-gradient(var(--background-color), var(--background-color));
+  background-color: var(--text-color);
+  background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%;
+  background-repeat: repeat; */
 }
 
 .sidebar {
@@ -69,8 +91,31 @@ body {
 header {
   flex: 0 0 100%;
   background-color: var(--background-color);
-  text-align: right;
+  transition: all 0.5s ease;
 }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  list-style-type: none;
+  margin: 0;
+}
+
+.nav-links .list-item {
+  margin: 0 10px;
+}
+
+.list-item.active {
+  text-decoration: underline;
+}
+
 footer {
   position: fixed;
   width: 100%;
@@ -78,6 +123,7 @@ footer {
   bottom: 0;
   text-align: center;
   background: var(--background-color);
+  transition: all 0.5s ease;
 }
 
 .btn {
@@ -88,45 +134,77 @@ footer {
   padding: 12px 16px;
   font-size: 16px;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 
+.footer-links {
+  display: inline-block;
+  margin-left: 10px;
+  padding-left: 10px;
+  border: 0 solid var(--text-color);
+  border-left-width: 1px;
+  margin-bottom: 5px;
+}
 
 /* THEME STYLES */
+.fa-github {
+  color: var(--text-color);
+  background: var(--background-color);
+  transition: all 0.5s ease;
+}
 /* TODO: needs refactoring */
 .fa-sun-o {
-  display: inline !important;
+  opacity: 1;
+  transform: translateX(-5px);
+  transition: opacity transform 1s ease;
 }
 
 .fa-moon-o {
-  display: none !important;
+  opacity: 0;
+  transform: translateX(5px);
+  transition: opacity transform 1s ease;
 }
 
 .dark-theme .fa-sun-o {
-  display: none !important;
+  opacity: 0;
 }
 
 .dark-theme .fa-moon-o {
-  display: inline !important;
+  opacity: 1;
 }
 
 .light-theme .fa-sun-o {
-  display: inline !important;
+  opacity: 1;
 }
 .light-theme .fa-moon-o {
-  display: none !important;
+  opacity: 0;
 }
 
 .light-theme.dark-theme .fa-sun-o {
-  display: none !important;
+  opacity: 0;
+  transform: translateX(5px);
+  transition: opacity transform 1s ease .15s;
 }
 .light-theme.dark-theme .fa-moon-o {
-  display: inline !important;
+  opacity: 1;
+  transform: translateX(5px);
+  transition: opacity transform 1s ease .15s;
 }
-.light-theme .fa-sun-o {
-  display: inline !important;
-}
+
 .btn .fa {
   position: absolute;
   top: 5px;
   left: 5px;
+}
+
+/* Utility classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
 }

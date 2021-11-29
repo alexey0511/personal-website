@@ -22,7 +22,18 @@
       Let me know if you spot something unusual!
     --->
     <header>
-      <button class="btn" onclick="toggleTheme()"><i class="fa fa-moon-o"></i><i class="fa fa-sun-o"></i></button>
+      <nav>
+        <ul class="nav-links">
+          <li class="list-item active">Home</li>
+          <li class="list-item">Contact</li>
+          <li class="list-item">Tech</li>
+          <li class="list-item">News</li>
+        </ul>
+        <button class="btn" onclick="toggleTheme()" aria-label="toggle site theme">
+          <i class="fa fa-moon-o"></i>
+          <i class="fa fa-sun-o"></i>
+        </button>
+      </nav>
       <hr />
     </header>
     <main>
@@ -49,6 +60,15 @@
     <footer>
       <hr />
       &copy; Alexey Om
+
+      <div class="footer-links">
+        <a href="https://github.com/alexey0511">
+          <span class="sr-only">Github account</span>
+          <i class="fa fa-github"></i>
+        </a>
+
+      </div>
+
     </footer>
 
     <script src="script.js"></script>
