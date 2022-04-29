@@ -1,3 +1,4 @@
+/* Mobile first styles */
 @font-face {
   font-family: AlexeyOmFont;
   src: url(assets/fonts/Alexeyomfont-Regular.ttf);
@@ -40,6 +41,13 @@ body {
   background: var(--background-color);
   color: var(--text-color);
   transition: all 0.5s ease;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    font-size: 32px;
+  }
 }
 
 /* THEME RELATED SETUP END */
@@ -110,6 +118,33 @@ nav {
 
 .nav-links .list-item {
   margin: 0 10px;
+  padding: 0 1rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.nav-links .list-item::before {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.nav-links .list-item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.nav-links .list-item a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+.nav-links .list-item:hover::after {
+  width: 100;
+  background-color: white;
 }
 
 .list-item.active {
@@ -124,6 +159,14 @@ footer {
   text-align: center;
   background: var(--background-color);
   transition: all 0.5s ease;
+}
+
+a {
+  color: var(--text-color);
+}
+
+a:hover {
+  text-shadow: 0 0 .65px var(--text-color), 0 0 .65px var(--text-color);
 }
 
 .btn {
